@@ -27,5 +27,8 @@ target_board = 'Stock'
 # 合併完整路徑
 target = BASE_URL + target_board + TARGET_PAGE + page_num + HTML_EXT
 
+def download_Html(target, headers=HEADERS):
+    return requests.get(target, headers=headers)
 
-
+x = download_Html(target)
+print(x.content)
